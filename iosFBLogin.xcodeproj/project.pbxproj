@@ -13,6 +13,10 @@
 		8D10D2071D957A4200054FD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D10D2061D957A4200054FD6 /* Assets.xcassets */; };
 		8D10D20A1D957A4200054FD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D10D2081D957A4200054FD6 /* LaunchScreen.storyboard */; };
 		8D10D2121D95847900054FD6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10D2111D95847900054FD6 /* HomeViewController.swift */; };
+		8D10D2171D95943F00054FD6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D10D2131D95943F00054FD6 /* Bolts.framework */; };
+		8D10D2181D95943F00054FD6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D10D2141D95943F00054FD6 /* FBSDKCoreKit.framework */; };
+		8D10D2191D95943F00054FD6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D10D2151D95943F00054FD6 /* FBSDKLoginKit.framework */; };
+		8D10D21A1D95943F00054FD6 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D10D2161D95943F00054FD6 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,11 @@
 		8D10D2091D957A4200054FD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D10D20B1D957A4200054FD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D10D2111D95847900054FD6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8D10D2131D95943F00054FD6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		8D10D2141D95943F00054FD6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		8D10D2151D95943F00054FD6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		8D10D2161D95943F00054FD6 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		8D10D21B1D95987900054FD6 /* iosFBLogin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iosFBLogin.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +40,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D10D21A1D95943F00054FD6 /* FBSDKShareKit.framework in Frameworks */,
+				8D10D2171D95943F00054FD6 /* Bolts.framework in Frameworks */,
+				8D10D2181D95943F00054FD6 /* FBSDKCoreKit.framework in Frameworks */,
+				8D10D2191D95943F00054FD6 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +69,11 @@
 		8D10D1FE1D957A4200054FD6 /* iosFBLogin */ = {
 			isa = PBXGroup;
 			children = (
+				8D10D21B1D95987900054FD6 /* iosFBLogin.entitlements */,
+				8D10D2131D95943F00054FD6 /* Bolts.framework */,
+				8D10D2141D95943F00054FD6 /* FBSDKCoreKit.framework */,
+				8D10D2151D95943F00054FD6 /* FBSDKLoginKit.framework */,
+				8D10D2161D95943F00054FD6 /* FBSDKShareKit.framework */,
 				8D10D1FF1D957A4200054FD6 /* AppDelegate.swift */,
 				8D10D2011D957A4200054FD6 /* ViewController.swift */,
 				8D10D2031D957A4200054FD6 /* Main.storyboard */,
@@ -101,6 +119,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = Q8NGDR843R;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -263,7 +286,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iosFBLogin/iosFBLogin.entitlements;
 				DEVELOPMENT_TEAM = Q8NGDR843R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iosFBLogin",
+				);
 				INFOPLIST_FILE = iosFBLogin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -277,7 +305,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iosFBLogin/iosFBLogin.entitlements;
 				DEVELOPMENT_TEAM = Q8NGDR843R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iosFBLogin",
+				);
 				INFOPLIST_FILE = iosFBLogin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
@@ -32,12 +33,31 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        // su dung nut dang nhap mac dinh cua facebook
+        /*
+        let loginButton:FBSDKLoginButton = FBSDKLoginButton()
+        loginButton.center = view.center
+        loginButton.delegate = self
+        self.view.addSubview(loginButton)
+        if FBSDKAccessToken.current() == nil {
+            print("chua login")
+        } else {
+            print("da login")
+        }
+        */
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    // su dung FBSDKLoginButtonDelegate phai co 2 function duoi day
+//    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+//        print("da login")
+//    }
+//    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+//        print("da logout")
+//    }
 
 
 }
