@@ -9,10 +9,11 @@
 import UIKit
 import FBSDKLoginKit
 
-class ViewController: UIViewController, FBSDKLoginButtonDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    let login:FBSDKLoginManager = FBSDKLoginManager()
     
     @IBAction func handleLogin(_ sender: AnyObject) {
         let userName = txtUsername.text!
@@ -28,6 +29,49 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             
         } else {
             print("login failed")
+        }
+    }
+    
+    @IBAction func handleLoginFB(_ sender: AnyObject) {
+        
+        login.logIn(withReadPermissions: ["public_profile"], from: self) { (result, error) in
+            if error == nil {
+                print(result?.token.tokenString)
+            } else {
+                print("login that bai")
+            }
+        }
+    }
+    
+    @IBAction func handleLogout(_ sender: AnyObject) {
+        login.logOut()
+        if FBSDKAccessToken.current() == nil {
+            print("da log out")
+        } else {
+            print("====================")
+        }
+    }
+    @IBAction func getAction(_ sender: AnyObject) {
+        
+        if FBSDKAccessToken.current() == nil {
+            print("da log out")
+            
+        } else {
+            let request:FBSDKGraphRequest = FBSDKGraphRequest.init(graphPath: "/me", parameters: ["fields":"id,name,birthday,email"], httpMethod: "GET")
+            request.start(completionHandler: { (connection, result, error) in
+                if error == nil {
+                    let userDict = result as! [String:AnyObject]
+                    let email = userDict["email"] as! String
+                    
+                    let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
+                    
+                    homeVC.name = email
+                    
+                    self.navigationController?.pushViewController(homeVC, animated: true)
+                } else {
+                    
+                }
+            })
         }
     }
     override func viewDidLoad() {

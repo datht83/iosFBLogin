@@ -39,6 +39,30 @@
                                     <action selector="handleLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S1a-lR-fII"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXR-oO-6Do">
+                                <frame key="frameInset" minX="134" minY="345" width="106" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login facebook"/>
+                                <connections>
+                                    <action selector="handleLoginFB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KMa-u9-dOr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOS-cF-fzt">
+                                <frame key="frameInset" minX="128" minY="397" width="118" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log out"/>
+                                <connections>
+                                    <action selector="handleLogout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gS2-fP-Fhu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoE-y7-GbV">
+                                <frame key="frameInset" minX="134" minY="491" width="72" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="GET"/>
+                                <connections>
+                                    <action selector="getAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RpE-Vv-CiE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -50,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1223.2" y="-195.6521739130435"/>
+            <point key="canvasLocation" x="213.59999999999999" y="-180.35982008995504"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="SWw-A5-BXx">
@@ -65,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W90-6L-g6e">
-                                <frame key="frameInset" minX="40" minY="201" width="168" height="21"/>
+                                <frame key="frameInset" minX="40" minY="201" width="304" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -80,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c00-9g-xdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2008.8" y="-196.55172413793105"/>
+            <point key="canvasLocation" x="1069.5999999999999" y="-180.35982008995504"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="41j-Ae-WIM">
@@ -98,7 +122,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUb-pq-EUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="284" y="-195.6521739130435"/>
+            <point key="canvasLocation" x="-570" y="-180"/>
         </scene>
     </scenes>
 </document>
